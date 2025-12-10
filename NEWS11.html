@@ -431,8 +431,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -451,16 +449,11 @@
             </div>
         </div>
     </footer>
-
-    <!-- Background Music -->
     <audio id="bgMusic" loop>
         <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
     </audio>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize particles.js background
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
@@ -496,26 +489,19 @@
                 }
             });
         });
-
-        // Theme selector functionality
         const themeBtn = document.getElementById('themeBtn');
         const themeOptions = document.getElementById('themeOptions');
         const musicBtn = document.getElementById('musicBtn');
         const bgMusic = document.getElementById('bgMusic');
         let isMusicPlaying = false;
-
         themeBtn.addEventListener('click', function() {
             themeOptions.classList.toggle('show');
         });
-
-        // Close theme options when clicking outside
         document.addEventListener('click', function(event) {
             if (!themeBtn.contains(event.target) && !themeOptions.contains(event.target)) {
                 themeOptions.classList.remove('show');
             }
         });
-
-        // Change theme
         document.querySelectorAll('.theme-option').forEach(option => {
             option.addEventListener('click', function() {
                 const theme = this.getAttribute('data-theme');
@@ -523,8 +509,6 @@
                 themeOptions.classList.remove('show');
             });
         });
-
-        // Music control
         musicBtn.addEventListener('click', function() {
             if (isMusicPlaying) {
                 bgMusic.pause();
@@ -535,27 +519,13 @@
             }
             isMusicPlaying = !isMusicPlaying;
         });
-
-        // News filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-                
-                // In a real app, this would filter the news cards
-                // For this demo, we'll just show a simple alert
                 alert(`Filtering news by: ${this.textContent}`);
             });
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
