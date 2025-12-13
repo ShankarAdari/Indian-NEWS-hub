@@ -340,8 +340,6 @@
 </head>
 <body>
     <div id="particles-js"></div>
-
-    <!-- Header Section -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -369,14 +367,10 @@
             <div class="theme-option" data-theme="green">Green Theme</div>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2>Latest 24-Hour News from India</h2>
             <p>Stay updated with the most recent and important news stories from across India, updated every hour.</p>
-            
-            <!-- Breaking News -->
             <div class="breaking-news" id="breakingNews">
                 <i class="fas fa-bullhorn"></i>
                 <div class="breaking-news-content">
@@ -384,13 +378,9 @@
                     <p>Fetching the latest headlines from India</p>
                 </div>
             </div>
-            
-            <!-- Last Updated -->
             <div class="last-updated" id="lastUpdated">
                 Last updated: Loading...
             </div>
-            
-            <!-- News Filters -->
             <div class="news-filters">
                 <button class="filter-btn active" data-category="general">All News</button>
                 <button class="filter-btn" data-category="business">Business</button>
@@ -401,13 +391,10 @@
             </div>
         </div>
     </section>
-
-    <!-- News Grid -->
     <section class="container">
         <div class="loading" id="loadingIndicator">
             <i class="fas fa-spinner"></i> Loading latest news...
         </div>
-        
         <div class="error-message" id="errorMessage" style="display: none;">
             <i class="fas fa-exclamation-triangle"></i> 
             <h3>Unable to load news</h3>
@@ -416,13 +403,9 @@
                 <i class="fas fa-redo"></i> Retry
             </button>
         </div>
-        
         <div class="news-grid" id="newsGrid">
-            <!-- News cards will be dynamically inserted here -->
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -441,20 +424,13 @@
             </div>
         </div>
     </footer>
-
-    <!-- Background Music -->
     <audio id="bgMusic" loop>
         <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
     </audio>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // API Configuration
-        const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your actual NewsAPI key
+        const API_KEY = 'YOUR_API_KEY_HERE'; 
         const API_URL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`;
-        
-        // Initialize particles.js background
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
@@ -489,15 +465,9 @@
                     }
                 }
             });
-            
-            // Fetch news on page load
             fetchNews();
-            
-            // Set up auto-refresh every 5 minutes
             setInterval(fetchNews, 5 * 60 * 1000);
         });
-
-        // DOM Elements
         const themeBtn = document.getElementById('themeBtn');
         const themeOptions = document.getElementById('themeOptions');
         const musicBtn = document.getElementById('musicBtn');
@@ -509,24 +479,17 @@
         const breakingNews = document.getElementById('breakingNews');
         const lastUpdated = document.getElementById('lastUpdated');
         const filterBtns = document.querySelectorAll('.filter-btn');
-        
         let isMusicPlaying = false;
         let currentCategory = 'general';
         let allNews = [];
-
-        // Theme selector functionality
         themeBtn.addEventListener('click', function() {
             themeOptions.classList.toggle('show');
         });
-
-        // Close theme options when clicking outside
         document.addEventListener('click', function(event) {
             if (!themeBtn.contains(event.target) && !themeOptions.contains(event.target)) {
                 themeOptions.classList.remove('show');
             }
         });
-
-        // Change theme
         document.querySelectorAll('.theme-option').forEach(option => {
             option.addEventListener('click', function() {
                 const theme = this.getAttribute('data-theme');
@@ -764,6 +727,7 @@
     </script>
 </body>
 </html>
+
 
 
 
