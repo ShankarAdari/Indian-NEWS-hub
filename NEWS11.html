@@ -497,8 +497,6 @@
                 themeOptions.classList.remove('show');
             });
         });
-
-        // Music control
         musicBtn.addEventListener('click', function() {
             if (isMusicPlaying) {
                 bgMusic.pause();
@@ -509,8 +507,6 @@
             }
             isMusicPlaying = !isMusicPlaying;
         });
-
-        // Refresh news
         refreshBtn.addEventListener('click', function() {
             fetchNews();
             refreshBtn.classList.add('rotating');
@@ -518,8 +514,6 @@
                 refreshBtn.classList.remove('rotating');
             }, 1000);
         });
-
-        // News filter functionality
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 filterBtns.forEach(b => b.classList.remove('active'));
@@ -528,16 +522,11 @@
                 filterNews(currentCategory);
             });
         });
-
-        // Fetch news from API
         async function fetchNews() {
             try {
                 loadingIndicator.style.display = 'block';
                 errorMessage.style.display = 'none';
                 newsGrid.innerHTML = '';
-                
-                // In a real implementation, you would use the API_URL
-                // For this demo, we'll use mock data to simulate API response
                 const mockNews = await getMockNews();
                 allNews = mockNews;
                 
@@ -727,6 +716,7 @@
     </script>
 </body>
 </html>
+
 
 
 
