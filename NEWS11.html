@@ -562,16 +562,12 @@
                         </div>
                     </div>
                 `;
-                
                 newsCard.addEventListener('click', () => {
                     window.open(news.url, '_blank');
                 });
-                
                 newsGrid.appendChild(newsCard);
             });
         }
-
-        // Update breaking news
         function updateBreakingNews(news) {
             const breakingContent = breakingNews.querySelector('.breaking-news-content');
             breakingContent.innerHTML = `
@@ -707,6 +703,7 @@
     </script>
 </body>
 </html>
+
 
 
 
