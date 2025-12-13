@@ -608,8 +608,6 @@
             if (diffHours < 24) return `${diffHours} hours ago`;
             return `${Math.floor(diffHours / 24)} days ago`;
         }
-
-        // Mock news data (in a real app, this would come from the API)
         function getMockNews() {
             return new Promise(resolve => {
                 setTimeout(() => {
@@ -694,6 +692,7 @@
     </script>
 </body>
 </html>
+
 
 
 
