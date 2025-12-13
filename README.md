@@ -1,6 +1,10 @@
 # Indian-NEWS-hub
 This is a new and latest NEWS application has customized features such as themes and live bakground themes
 
+Added new customization tools such as Refresh, Themes and Music
+<img width="352" height="77" alt="image" src="https://github.com/user-attachments/assets/ae0abc37-5acb-4859-9a34-7a6ebf063c19" />
+
+
 Theme 1
 <img width="1308" height="638" alt="image" src="https://github.com/user-attachments/assets/b4616a50-48b3-4cb3-80b2-7d79335e5e50" />
 
